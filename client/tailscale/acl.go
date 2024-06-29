@@ -43,7 +43,14 @@ type ACLDetails struct {
 	ACLs      []ACLRow            `json:"acls,omitempty"`
 	Groups    map[string][]string `json:"groups,omitempty"`
 	TagOwners map[string][]string `json:"tagowners,omitempty"`
+	NodeAttrs []NodeAttr          `json:"nodeAttrs,omitempty"`
 	Hosts     map[string]string   `json:"hosts,omitempty"`
+}
+
+// NodeAttr contains a mapping between targets and node attributes.
+type NodeAttr struct {
+	Target []string `json:"target"`
+	Attr   []string `json:"attr"`
 }
 
 // ACL contains an ACLDetails and metadata.
